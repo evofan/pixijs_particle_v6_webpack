@@ -96,6 +96,7 @@ let text_libVersion: PIXI.Text,
   text_description: PIXI.Text,
   text_message: PIXI.Text,
   text_fps: PIXI.Text;
+  let text_loading: PIXI.Text;
 
 if (ASSET_BG === "") {
   console.log("Don't use background image.");
@@ -108,11 +109,10 @@ loader.add("obj_3_data", ASSET_OBJ3);
 loader.add("obj_4_data", ASSET_OBJ4);
 
 // Text loading
-let text_loading: PIXI.Text;
 text_loading = new PIXI.Text(`Loading asset data ....`, {
   fontFamily: "Arial",
-  fontSize: 10,
-  fill: 0xff0033,
+  fontSize: 20,
+  fill: 0x999999,
   align: "left",
   fontWeight: "bold",
   stroke: "#000000",
@@ -124,6 +124,7 @@ text_loading = new PIXI.Text(`Loading asset data ....`, {
 container.addChild(text_loading);
 text_loading.x = 10;
 text_loading.y = 10;
+requestAnimationFrame(animate);
 
 loader.load((loader: PIXI.Loader, resources: any) => {
   console.log(loader);
@@ -199,7 +200,7 @@ loader.load((loader: PIXI.Loader, resources: any) => {
   text_fps.y = HEIGHT - text_fps.height - offset;
 
   // app start
-  requestAnimationFrame(animate);
+  // requestAnimationFrame(animate);
 });
 
 // err
