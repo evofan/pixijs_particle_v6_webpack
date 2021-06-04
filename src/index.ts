@@ -149,16 +149,14 @@ loader.load((loader: PIXI.Loader, resources: any) => {
 
   // text version
   // let version: string = "PixiJS: 5.3.3\nwebpack: 4.44.0\nTypeScript: 4.0.2";
-  let version: string = `PixiJS: ver.${PIXI.VERSION}`;
-  text_libVersion = setText(version, "Arial", 16, 0xf0fff0, "left", "normal");
+  text_libVersion = setText(`PixiJS: ver.${PIXI.VERSION}`, "Arial", 16, 0xf0fff0, "left", "normal");
   container.addChild(text_libVersion);
   text_libVersion.x = offset;
   text_libVersion.y = offset;
 
   // text description
-  let description: string = "Particle Effect Test 'Spark'";
   text_description = setText(
-    description,
+    "Particle Effect Test 'Spark'",
     "Arial",
     24,
     0xffd700,
@@ -175,9 +173,8 @@ loader.load((loader: PIXI.Loader, resources: any) => {
   text_description.y = offset;
 
   // text message
-  let message: string = "Automatic generation";
   text_message = setText(
-    message,
+    "Automatic generation",
     "Arial",
     24,
     0xff0033,
